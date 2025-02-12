@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Message</title>
+  <style>
+
+    /* Personalized Message Section */
+    .message {
+      height: 100vh;  /* Full viewport height */
+      width: 100vw;   /* Full viewport width */
+      background-color: #f2cb70;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+     
+    .memories {
+        width: 200px;
+        height: 200px;
+        border-radius: 80px;
+        cursor: pointer; /* Indicates the image is clickable */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Add hover effect */
+    .memories:hover {
+        transform: scale(1.1);
+    }
+
+    /* Make anchor tag behave like an inline block */
+    a {
+        display: inline-block;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Personalized Message -->
+  <section class="message">
+    <h2>My Dearest Love,</h2>
+    <p>I wanted to create something special for you this Valentine's Day. You mean the world to me, and I love the way we make each other smile. Thank you for all the wonderful memories, and I look forward to making many more. <br>Forever Yours.</p>
+    
+    <!-- Clickable Image wrapped in <a> tag -->
+    <a href="gallery.html">
+        <img src="memories.avif" alt="memories" class="memories">
+    </a>
+  </section>
+
+</body>
+</html>
