@@ -66,26 +66,26 @@
 
 <button id="play-btn" onclick="playMusic()">Click to Enable Sound</button>
 
-<script>
-    function playMusic() {
-        let audio = document.getElementById("bg-music");
-        audio.play().then(() => {
-            document.getElementById("play-btn").style.display = "none"; // Hide button after play
-        }).catch(error => {
-            console.error("Autoplay blocked: ", error);
-        });
-    }
+<audio id="bg-music" loop>
+    <source src="Taylor Swift.mp3" type="audio/mpeg">
+</audio>
 
+<button onclick="playAudio()">Play</button>
+<button onclick="document.getElementById('bg-music').pause()">Pause</button>
+
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         let audio = document.getElementById("bg-music");
-        audio.muted = true; // Mute initially
-        audio.play().then(() => {
-            setTimeout(() => { audio.muted = false; }, 1000); // Unmute after 1 second
-        }).catch(error => {
-            console.warn("Autoplay prevented, waiting for user action.");
-        });
+        audio.muted = true; // Mute the audio initially to allow autoplay
+        audio.play();
+        setTimeout(() => { audio.muted = false; }, 1000); // Unmute after 1 second
     });
+
+    function playAudio() {
+        document.getElementById("bg-music").play();
+    }
 </script>
+
 
 </body>
 </html>
