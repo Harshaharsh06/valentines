@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Surprise</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    /* Landing Page */
+    .landing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #ce2c2c;
+      text-align: center;
+      color: white;
+    }
+    .landing h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+ 
+    /* Music Playlist Section */
+    .playlist {
+      padding: 40px 20px;
+      background-color: #ffe6e6;
+      text-align: center;
+    }
+    .playlist iframe {
+      width: 100%;
+      max-width: 900px;
+      height: 380px;
+      border-radius: 10px;
+    }
+
+
+    
+
+  </style>
+</head>
+<body>
+
+  <!-- Landing Page -->
+  <div class="landing">
+    <h1>Welcome to Your Valentine's Day Surprise!</h1>
+    <a href="http://127.0.0.1:5500/subgift.html"> <img src="Heart.gif" alt="it is my Heart" width="230" height="180"> </a>
+    
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="Taylor Swift.mp3" type="audio/mpeg">
+</audio>
+
+<button id="play-btn" onclick="playMusic()">Click to Enable Sound</button>
+
+<script>
+    function playMusic() {
+        let audio = document.getElementById("bg-music");
+        audio.play().then(() => {
+            document.getElementById("play-btn").style.display = "none"; // Hide button after play
+        }).catch(error => {
+            console.error("Autoplay blocked: ", error);
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let audio = document.getElementById("bg-music");
+        audio.muted = true; // Mute initially
+        audio.play().then(() => {
+            setTimeout(() => { audio.muted = false; }, 1000); // Unmute after 1 second
+        }).catch(error => {
+            console.warn("Autoplay prevented, waiting for user action.");
+        });
+    });
+</script>
+
+</body>
+</html>
