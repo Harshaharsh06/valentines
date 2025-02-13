@@ -59,29 +59,32 @@
     <a href="subgift.html"> <img src="Heart.gif" alt="it is my Heart" width="230" height="180"> </a>
     
   </div>
-
-      <audio id="bg-music" loop>
+<audio id="bg-music" loop>
     <source src="Taylor Swift.mp3" type="audio/mpeg">
 </audio>
-
-<button onclick="playAudio()">Play</button>
-<button onclick="document.getElementById('bg-music').pause()">Pause</button>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         let audio = document.getElementById("bg-music");
-        audio.muted = true; // Mute the audio initially to allow autoplay
-        audio.play();
-        setTimeout(() => { audio.muted = false; }, 1000); // Unmute after 1 second
+
+        // Check if user has interacted with the page before
+        if (navigator.userActivation && navigator.userActivation.hasBeenActive) {
+            audio.play();
+        } else {
+            // Try to autoplay silently first
+            audio.muted = true;
+            audio.play().then(() => {
+                audio.muted = false; // Unmute after playback starts
+            }).catch((error) => {
+                console.log("Autoplay blocked:", error);
+            });
+        }
     });
-
-    function playAudio() {
-        document.getElementById("bg-music").play();
-    }
-
-                
 </script>
 
+
+
+  
 
 </body>
 </html>
