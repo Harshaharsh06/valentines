@@ -6,23 +6,27 @@
   <title>Love Message</title>
   <style>
 
-    /* Personalized Message Section */
-    .message {
-      height: 100vh;  /* Full viewport height */
-      width: 100vw;   /* Full viewport width */
-      background-color: #f2cb70;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 1.5rem;
-    }
+.message {
+    height: 100vh;
+    width: 100vw;
+    background: url('mem.avif') center/cover no-repeat, #ece3ea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Aligns content to the top */
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(25, 0, 0);
+    margin-top: 10px; /* Adds space at the top */
+    padding-top: 10px; /* Optional: Adds spacing inside */
+}
+
+
      
     .memories {
-        width: 200px;
-        height: 200px;
-        border-radius: 80px;
+        width: 100px;
+        height: 60px;
+        border-radius: px;
         cursor: pointer; /* Indicates the image is clickable */
         transition: transform 0.3s ease-in-out;
     }
@@ -48,7 +52,7 @@
     
     <!-- Clickable Image wrapped in <a> tag -->
     <a href="gallery.html">
-        <img src="memories.avif" alt="memories" class="memories">
+        <img src="R.png" alt="memories" class="memories">
     </a>
   </section>
 
