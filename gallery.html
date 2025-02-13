@@ -285,6 +285,28 @@
             </iframe>
         </section>    
 
+<audio id="bg-music" loop>
+    <source src="Taylor Swift.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let audio = document.getElementById("bg-music");
+
+        // Check if user has interacted with the page before
+        if (navigator.userActivation && navigator.userActivation.hasBeenActive) {
+            audio.play();
+        } else {
+            // Try to autoplay silently first
+            audio.muted = true;
+            audio.play().then(() => {
+                audio.muted = false; // Unmute after playback starts
+            }).catch((error) => {
+                console.log("Autoplay blocked:", error);
+            });
+        }
+    });
+</script>
 
     
 
