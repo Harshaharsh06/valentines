@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day Surprise</title>
     <style>
+
         body {
+            
             font-family: Arial, sans-serif;
             background-color: #ffe6e6;
             padding: 20px;
@@ -66,14 +68,19 @@
         }
 
         .timeline {
-  padding: 40px 20px;
-  background-color: #709ae9;
-  color: white;
+            background: linear-gradient(135deg, #58c1ef, #9bd7f1);
+  color: rgb(9, 1, 1);
+  font-family: 'Dancing Script', cursive;
+  padding: 30px;
+  margin-top: 50px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
-  border-radius: 60px;
-  width: 70%;  /* Set the width as a percentage of the container */
-  max-width: 1000px;  /* Optional: Set a maximum width */
-  margin: 0 auto;  /* Center the section */
+  position: relative;
+  animation: pulse 3s ease-in-out infinite;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
     .timeline h2 {
@@ -132,17 +139,21 @@
         font-size: 1.2rem;
     }
     .interests { 
-  padding: 40px 20px;
-  background-color: #d0e27a;
-  color: rgba(1, 1, 1, 0.847);
-  text-align: center;
-  border-radius: 10px;
-  width: 70%;  /* Set the width as a percentage of the container */
-  max-width: 1000px;  /* Optional: Set a maximum width */
-  margin: 0 auto;  /* Center the section */
+        background: linear-gradient(135deg, #5eec7a, #b0f5bb);
+  color: rgb(9, 1, 1);
+  font-family: 'Dancing Script', cursive;
+  padding: 30px;
   margin-top: 50px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  animation: pulse 3s ease-in-out infinite;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    }
     .interests h2 {
       font-size: 2.5rem;
       margin-bottom: 20px;
@@ -156,6 +167,77 @@
       margin-bottom: 10px;
     }
 
+/* Styling the Final Note */
+.final-note {
+  background: linear-gradient(135deg, #ff7f7f, #ffafcc);
+  color: white;
+  font-family: 'Dancing Script', cursive;
+  padding: 30px;
+  margin-top: 50px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  animation: pulse 3s ease-in-out infinite;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-note p {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+}
+
+.final-note::before {
+  content: "💖";
+  font-size: 3rem;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: spin 4s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) translateX(-50%);
+  }
+  100% {
+    transform: rotate(360deg) translateX(-50%);
+  }
+}
+
+/* Add some glow effect to the text */
+.final-note p {
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8), 0px 0px 20px rgba(255, 0, 150, 0.7);
+}
+
+.playlist-container {
+    display: flex;
+    justify-content: center; /* Aligns the iframe to the center */
+    margin-top: 20px; /* Optional: adds space above the playlist */
+}
+
+.playlist {
+    border-radius: 12px;
+}
+
+
    
 
     </style>
@@ -163,6 +245,7 @@
 <body>
 
     <h1>Our Memories Together ❤️</h1>
+    
 
     <div class="content">
         <div class="row">
@@ -199,6 +282,16 @@
         <!-- Add more images with messages in the same structure -->
 
     </div>
+
+    <h2>Our Special Playlist 🎵</h2>
+    <div class="playlist-container">
+        <iframe class="playlist" 
+            src="https://open.spotify.com/embed/playlist/5hFiNLYFjeVBrlXPkmwt1t?utm_source=generator" 
+            width="750" height="380" frameborder="0" allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
+    </div>
+    
 
     <div> <section class="timeline">
         <h2>Our Journey Together</h2>
@@ -276,40 +369,27 @@
         </section></div>
 
         
-        <section class="playlist">
-            <h2>Our Special Playlist 🎵</h2>
-            <iframe style="border-radius:12px" 
-                src="https://open.spotify.com/embed/playlist/5hFiNLYFjeVBrlXPkmwt1t?utm_source=generator" 
-                width="100%" height="380" frameborder="0" allowfullscreen="" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-            </iframe>
-        </section>    
-		
-		  <audio id="bg-music" loop>
-    <source src="Taylor Swift.mp3" type="audio/mpeg">
-</audio>
-
-<button id="play-btn" onclick="playMusic()">Click to Enable Sound</button>
-
-<audio id="bg-music" loop>
-  <source src="Taylor Swift.mp3" type="audio/mpeg">
-</audio>
-
-<button onclick="playAudio()">Play</button>
-<button onclick="document.getElementById('bg-music').pause()">Pause</button>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      let audio = document.getElementById("bg-music");
-      audio.muted = true; // Mute the audio initially to allow autoplay
-      audio.play();
-      setTimeout(() => { audio.muted = false; }, 1000); // Unmute after 1 second
-  });
-
-  function playAudio() {
-      document.getElementById("bg-music").play();
-  }
-
-        
+       
+        <audio id="backgroundMusic" autoplay loop>
+            <source src="Taylor Swift.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let audio = document.getElementById("backgroundMusic");
+                audio.volume = 0.5; // Adjust volume if needed
+    
+                // Ensure autoplay works by handling browser restrictions
+                audio.play().catch(error => {
+                    console.log("Autoplay blocked, waiting for user interaction.");
+                });
+            });
+        </script>
+          
+          <div class="final-note">
+            <p>Thank you for visiting my special Valentine's Day page! I hope it brought a smile to your face and filled your heart with joy. Remember, love is something we can share every day, not just on this day. Wishing you a wonderful Valentine's Day filled with love, happiness, and unforgettable memories. 💖</p>
+          </div>
+              
 </body>
 </html>
