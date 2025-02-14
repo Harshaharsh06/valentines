@@ -66,6 +66,7 @@
             color: #d63384;
             font-weight: bold;
         }
+        
 
         .timeline {
             background: linear-gradient(135deg, #58c1ef, #9bd7f1);
@@ -222,22 +223,69 @@
   }
 }
 
-/* Add some glow effect to the text */
-.final-note p {
-  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8), 0px 0px 20px rgba(255, 0, 150, 0.7);
+.final-note {
+  margin-top: 70px;  /* Moves it down */
 }
 
 .playlist-container {
     display: flex;
     justify-content: center; /* Aligns the iframe to the center */
-    margin-top: 20px; /* Optional: adds space above the playlist */
+    margin-top: 70px; /* Optional: adds space above the playlist */
 }
 
 .playlist {
-    border-radius: 12px;
+    border-radius: 20px;
 }
 
+.image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 400px; /* Specific height */
+            position: relative; /* Ensures animations stay contained */
+            overflow: hidden;
+            background-color: #ffe6e6; /* Only affects this div */
+            border-radius: 20px; /* Optional: for styling */
+            margin: 20px auto; /* Centers it nicely */
+            width: 80%; /* Adjust width as needed */
+        }
 
+.imagee-container {
+            position: relative;
+            width: 700px;
+            height: 350px;
+        }
+
+        .imagee-container img {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(212, 210, 210, 0.3);
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 2s ease-in-out;
+        }
+
+        /* Individual image positions */
+        .image1 { top: 0; left: 40%; transform: translateX(-50%) scale(0.5); }
+        .image2 { bottom: 0; left: 5%; transform: translateY(50%) scale(0.5); }
+        .image3 { bottom: 0; right: 0%; transform: translateY(50%) scale(0.5); }
+
+        /* Animation */
+        @keyframes animateImages {
+            0% { opacity: 0; transform: scale(0.5) translateY(50px); }
+            50% { opacity: 1; transform: scale(1.1) translateY(0); }
+            100% { opacity: 0; transform: scale(0.5) translateY(-50px); }
+        }
+
+        /* Apply animation to images */
+        .image1 { animation: animateImages 4s infinite alternate; }
+        .image2 { animation: animateImages 4s infinite alternate 1s; }
+        .image3 { animation: animateImages 4s infinite alternate 2s; }
+
+h2 {
+    margin-top: 100px; /* Adjust the value as needed */
+}
    
 
     </style>
@@ -283,14 +331,7 @@
 
     </div>
 
-    <h2>Our Special Playlist 🎵</h2>
-    <div class="playlist-container">
-        <iframe class="playlist" 
-            src="https://open.spotify.com/embed/playlist/5hFiNLYFjeVBrlXPkmwt1t?utm_source=generator" 
-            width="750" height="380" frameborder="0" allowfullscreen="" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-        </iframe>
-    </div>
+ 
     
 
     <div> <section class="timeline">
@@ -354,6 +395,13 @@
             document.getElementById(questionId).style.fontWeight = "bold";
         }
     </script>
+<div class="image-section">
+<div class="imagee-container">
+    <img src="together.jpg" alt="Image 1" class="image1">
+    <img src="together1.jpg" alt="Image 2" class="image2">
+    <img src="together2.jpg" alt="Image 3" class="image3">
+</div>
+</div>
     <div> 
          <!-- Shared Interests -->
         <section class="interests">
@@ -386,6 +434,15 @@
                 });
             });
         </script>
+
+<h2>Our Special Playlist 🎵</h2>
+<div class="playlist-container">
+    <iframe class="playlist" 
+        src="https://open.spotify.com/embed/playlist/5hFiNLYFjeVBrlXPkmwt1t?utm_source=generator" 
+        width="750" height="380" frameborder="0" allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+</div>
           
           <div class="final-note">
             <p>Thank you for visiting my special Valentine's Day page! I hope it brought a smile to your face and filled your heart with joy. Remember, love is something we can share every day, not just on this day. Wishing you a wonderful Valentine's Day filled with love, happiness, and unforgettable memories. 💖</p>
