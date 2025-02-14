@@ -18,19 +18,23 @@
 
     /* Landing Page */
     .landing {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #ce2c2c;
-      text-align: center;
-      color: white;
-    }
+    height: 100vh;
+    width: 100vw;
+    background: url('valentine.jpg') center/cover no-repeat, #ece3ea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Aligns content to the top */
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgb(212, 40, 40);
+    margin-top: 10px; /* Adds space at the top */
+    padding-top: 10px; /* Optional: Adds spacing inside */
+}
     .landing h1 {
       font-family: 'Pacifico', cursive;
       font-size: 4rem;
-      margin-bottom: 20px;
+      margin-top: 150px;
     }
  
     /* Music Playlist Section */
@@ -46,7 +50,13 @@
       border-radius: 10px;
     }
 
+    .landing img {
+    transition: transform 0.3s ease-in-out;
+}
 
+.landing img:hover {
+  transform: scale(1.1);
+}
     
 
   </style>
@@ -56,14 +66,11 @@
   <!-- Landing Page -->
   <div class="landing">
     <h1>Welcome to Your Valentine's Day Surprise!</h1>
-    <a href="subgift.html"> <img src="Heart.gif" alt="it is my Heart" width="230" height="180"> </a>
+    <a href="http://127.0.0.1:5500/subgift.html"> <img src="H.png" alt="it is my Heart" width="230" height="180"> </a>
     
   </div>
 
 
-
-
-  
 
 </body>
 </html>
